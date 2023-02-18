@@ -13,15 +13,18 @@ cout<<"The git command started..."<<endl;
 system("date");
 system("git status");
 system("git add -A");
-cout<<"The following changes will be made.Do you want to continue?Press Y or N:"<<endl;
+cout<<"Do you want to proceed further? Y or N: ";
 cin>>userInput;
-
-if(userInput = 'y' || userInput = 'Y'){
+cin.ignore();
+if(userInput == 'y' || userInput == 'Y'){
 cout<<"Enter the commit message:"<<endl;
 getline(cin,message);
 string command = "git commit -m \""+message+"\"";
 system(command.c_str());
 system("git push");
+}
+else{
+system("git reset");
 }
 system("pause"); // hold the screen,press any key to continue.
 return 0;
